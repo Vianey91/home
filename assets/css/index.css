@@ -7,7 +7,8 @@ header {
     position: fixed;
     background-color: white;
     width: 100vw;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%) ;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    z-index: 99999;
 }
 
 #aside-left {
@@ -19,8 +20,8 @@ header {
 }
 
 .content {
-    background-color: gold;
     grid-area: content;
+    padding-top: 20px;
 }
 
 .container-home {
@@ -29,21 +30,24 @@ header {
     grid-template-columns: 350px 650px 300px;
     grid-template-areas: "aside-left content aside-right";
     padding-top: 65px;
+    justify-content: space-between;
 }
 
 
 /************************** MENU ***************************/
 
+
 #header-left {
-    flex: 1
+    flex: 1;
 }
 
-#header-centre {
-    flex: 1
+#header-center {
+    flex: 2;
 }
 
 #header-right {
-    flex: 1
+    flex: 1;
+    padding-right: 15px;
 }
 
 .logo img {
@@ -64,7 +68,7 @@ header {
     margin-left: 20px;
     border-radius: 50px;
     outline: none;
-    border: 1px solid #ccc;
+    border: 1px solid#ccc;
     width: 95%;
     padding-left: 30px;
     position: relative;
@@ -129,7 +133,7 @@ header .header-icon {
 }
 
 header .notification {
-    background-color: #fa383e;
+    background-color: #FA283E;
     padding: 5px;
     border-radius: 50px;
     display: block;
@@ -137,7 +141,7 @@ header .notification {
     height: 18px;
     text-align: center;
     color: white;
-    font-size: 0.6em;
+    font-size: .6em;
     font-weight: bold;
     position: absolute;
 }
@@ -163,8 +167,9 @@ header #header-right .header-icon .notification {
     position: fixed;
     height: 95vh;
     overflow: hidden;
-    left: 0;
+    right: left;
     padding-right: 20px;
+    width: max-content;
 }
 
 #aside-left .navigation-item {
@@ -235,7 +240,7 @@ header #header-right .header-icon .notification {
     height: 9px;
     border-radius: 50px;
     position: absolute;
-    bottom:  20px;
+    bottom: 20px;
     left: 48px;
     border: 1px solid white;
 }
@@ -247,23 +252,111 @@ header #header-right .header-icon .notification {
 .offline {
     background-color: gray;
 }
-/************************** CAROUSSEL **********************/
+
+/************************** CAROUSEL **********************/
 .stories-item {
-    width: 220px;
+    width: 160px;
+    position: relative;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.owl-stage {
+    height: 380px;
+    padding: 10px;
 }
 
 .stories-item img {
-    width: 200px;
+    width: 150px;
     height: 350px;
     border-radius: 10px;
 }
 
+.story-message {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 140px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.fa-plus-circle {
+    position: absolute;
+    bottom: 60px;
+    left: 65px;
+    z-index: 2;
+    font-size: 1.4rem;
+    color: blue;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.story-username {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 160px;
+    height: 35px;
+    border-radius: 0 0 10px 10px;
+}
+
+/************************** CREATE POST **********************/
+
+.create-post {
+    border-radius: 10px;
+}
+.create-post .user-news {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.create-post.user-news img {
+    border-radius: 50px;
+}
+
+.create-post .bt-add-post {
+    flex: 1;
+    background-color: #efefef;
+    margin: 0 20px;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    color: gray;
+    padding-left: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.create-post .divider {
+    border: 0.1px solid #ccc;
+    width: 90%;
+    margin: 0 auto ;
+}
+
+.create-post .action-items {
+    display: flex;
+    justify-content: space-evenly;
+}
+.create-post .action-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding-bottom: 20px;
+}
 /************************** RESPONSIVE **********************/
 
 @media screen and (min-width: 900px) and (max-width: 1300px) {
     .container-home {
         grid-template-columns: 600px 300px;
         grid-template-areas: "content aside-right";
+        justify-content: center;
     }
 
     #aside-left {
@@ -279,6 +372,7 @@ header #header-right .header-icon .notification {
         height: 50px;
         cursor: pointer;
     }
+
     #header-left input:hover {
         width: 150px;
         padding-left: 35px;
@@ -291,7 +385,7 @@ header #header-right .header-icon .notification {
 
     #header-left .fa-search {
         top: 13px;
-        left: 25px;
+        left: 35px;
     }
 
     #header-left {
@@ -303,6 +397,7 @@ header #header-right .header-icon .notification {
     .container-home {
         grid-template-columns: 90%;
         grid-template-areas: "content";
+        justify-content: center;
     }
 
     #aside-left,
@@ -317,12 +412,9 @@ header #header-right .header-icon .notification {
     #header-left input {
         width: 50px;
         height: 50px;
-    }
-    #header-left input {
-        width: 50px;
-        height: 50px;
         cursor: pointer;
     }
+
     #header-left input:hover {
         width: 150px;
         padding-left: 35px;
@@ -335,7 +427,7 @@ header #header-right .header-icon .notification {
 
     #header-left .fa-search {
         top: 13px;
-        left: 25px;
+        left: 35px;
     }
 
     #header-left {
@@ -351,10 +443,12 @@ header #header-right .header-icon .notification {
     }
 }
 
+
 @media screen and (max-width: 600px) {
     .container-home {
         grid-template-columns: 95%;
         grid-template-areas: "content";
+        justify-content: center;
     }
 
     #aside-left,
@@ -369,12 +463,9 @@ header #header-right .header-icon .notification {
     #header-left input {
         width: 50px;
         height: 50px;
-    }
-    #header-left input {
-        width: 50px;
-        height: 50px;
         cursor: pointer;
     }
+
     #header-left input:hover {
         width: 150px;
         padding-left: 35px;
@@ -387,7 +478,7 @@ header #header-right .header-icon .notification {
 
     #header-left .fa-search {
         top: 13px;
-        left: 25px;
+        left: 35px;
     }
 
     #header-left {
@@ -401,6 +492,7 @@ header #header-right .header-icon .notification {
     #header-left .header-icon:nth-child(5) {
         display: none;
     }
+
     #header-right {
         padding-right: 20px;
     }
