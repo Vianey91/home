@@ -207,9 +207,9 @@ header #header-right .header-icon .notification {
 #aside-right .users-items {
     position: fixed;
     height: 95vh;
-    overflow: scroll;
+    overflow: auto;
     right: 0;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 #aside-right .users-item {
@@ -288,11 +288,11 @@ header #header-right .header-icon .notification {
 
 .fa-plus-circle {
     position: absolute;
-    bottom: 60px;
+    bottom: 55px;
     left: 65px;
     z-index: 2;
-    font-size: 1.4rem;
-    color: blue;
+    font-size: 1.5rem;
+    color: #1877f2;
     background-color: white;
     border-radius: 50px;
 }
@@ -343,12 +343,119 @@ header #header-right .header-icon .notification {
 .create-post .action-items {
     display: flex;
     justify-content: space-evenly;
+    margin: 20px 0;
+    padding-bottom: 20px;
 }
+
+.create-post .action-icon {
+    padding-right: 10px
+}
+
+.create-post .action-icon {
+    padding-right: 10px;
+}
+
 .create-post .action-item {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    padding-bottom: 20px;
+}
+
+/************************** MODAL **********************/
+
+.modal-post {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgb(0 0 0/10%), 0 8px 16px rgb(0 0 0/33%);
+    border-radius: 5px;
+    background-color: white;
+    z-index: 2;
+    display: none;
+}
+
+.modal-header .modal-title h5{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.close-modal {
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-header .fa-times {
+    position: absolute;
+    right: 5px;
+    font-size: 1.5rem;
+    background-color: #ccc;
+    display: block;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+
+.modal-post .divider {
+    border: 0.1px solid #ccc;
+    margin: 10px 0;
+}
+
+.modal-body .modal-footer {
+    padding: 10px;
+}
+.modal-body .user-new-modal {
+    display: flex;
+}
+.modal-body .user-new-modal .profile-picture {
+    padding-right: 10px;
+}
+
+.modal-body .post-content textarea {
+    width: 95%;
+    border: none;
+    outline: none;
+    font-size: 1.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+}
+
+.modal-footer .modal-icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-infos {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-infos-icons {
+    display: flex;  
+    gap: 5px;
+}
+
+.modal-infos-icon i {
+    flex: 1;
+}
+.modal-infos .modal-infos-title {
+    flex: 1;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.bt-modal-submit {
+    background-color: #1877f2;
+    color: white;
+    width: 100%;
+    margin: 10px 0px;
 }
 /************************** RESPONSIVE **********************/
 
@@ -495,5 +602,18 @@ header #header-right .header-icon .notification {
 
     #header-right {
         padding-right: 20px;
+    }
+
+    .create-post .bt-add-post {
+        font-size: 0.9rem;
+    }
+
+    .create-post .navigation-description {
+        font-size: 0.7rem;
+    }
+
+    .modal-post {
+        width: 90vw;
+        margin-top: 40px;
     }
 }
