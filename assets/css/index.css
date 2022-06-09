@@ -360,6 +360,124 @@ header #header-right .header-icon .notification {
     align-items: center;
 }
 
+/************************** POSTS **********************/
+
+.posts-item {
+    margin: 20px;
+}
+.posts-items .post-owner {
+    display: flex;
+    align-items: center;
+}
+
+.posts-items .post-owner .owner-username {
+    font-weight: bold;
+}
+
+.posts-item .post-content {
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+
+.posts-item .post-illustration-details {
+    padding: 10px;
+}
+
+.posts-item .post-illustration-image img {
+    width: 100%;
+    height: 500px;
+}
+
+.posts-item .post-url {
+    font-size: 1.2rem;
+    color: gray;
+}
+.posts-item .like-and-comment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.posts-item .like-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.posts-item .post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 40px;
+    cursor: pointer;
+}
+
+/************************** COMMENTS **********************/
+
+.posts-item .user-comment-box {
+    display: flex;
+    align-items: center;
+}
+
+.posts-item .user-comment-box .comment-input {
+    flex: 1;
+}
+
+.posts-item .user-comment-box input {
+    width: 95%;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #efefef;
+    color: black;
+    padding-left: 20px;
+    font-weight: 100p;
+}
+
+.comments-item {
+    padding: 10px;
+}
+
+.posts-item .comments-item {
+    display: flex;
+}
+
+.posts-item .comments-item .comment-item {
+    display: flex;
+    align-self: flex-start;
+}
+
+.comments-item .comment-content {
+    text-align: justify;
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.comments-item .comment-owner-fullname {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.comments-item .comment-content-details {
+    margin-bottom: 10px;
+}
+
+.comments-item {
+    margin: 20px 0;
+}
+
+.comments-item .comments-actions span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.comments-item .comments-actions span:hover {
+   text-decoration: underline;
+}
 /************************** MODAL **********************/
 
 .modal-post {
